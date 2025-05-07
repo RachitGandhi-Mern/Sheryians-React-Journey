@@ -703,7 +703,17 @@ Here, useEffect is used to start a timer when the component mounts and clean it 
 	•	Effect: Performs side effects in functional components, like data fetching.
 
 
+
+
+
+
 //#!-------------------------------------------------------Day-2-------------------------------------------------------------
+
+
+
+
+
+
 //#!What is JSX in React?
 
 ✅ JSX (JavaScript XML) = JavaScript + XML-like Syntax
@@ -846,3 +856,46 @@ import greet, { divide } from './mix.js';
 	•	✅ Multiple named exports allowed.
 	•	✅ Named exports must be imported using {} with the same name.
 
+//#!Here’s a step-by-step breakdown of what your commands are doing and how to properly execute them to set up a React project using Vite with the rafce (React Arrow Function Component Export) snippet:
+Step-by-Step Guide
+
+1️⃣ Go to your desired project directory:
+cd path/to/your/project-directory
+
+2️⃣ Create a new Vite project:
+
+npm create vite@latest
+
+	•	It will prompt you to name the project.
+	•	Choose React as the framework.
+	•	Choose JavaScript (or TypeScript if you prefer TS).
+
+3️⃣ Navigate into the created project folder:
+cd your-project-name
+4️⃣ Install dependencies:
+
+npm install
+
+This installs node_modules and creates package-lock.json.
+
+5️⃣ Run the development server:
+
+npm run dev
+
+It will start the Vite dev server at http://localhost:5173 (default).
+
+🧩 Bonus: Enable rafce Snippet
+
+To use rafce, make sure you have the ES7+ React/Redux/React-Native snippets extension installed in VS Code.
+
+rafce
+
+Type this inside any .jsx or .js file and hit tab — it will expand to:
+
+import React from 'react'
+const ComponentName = () => {
+  return (
+    <div>ComponentName</div>
+  )
+}
+export default ComponentName
