@@ -1,12 +1,11 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { App, App1 } from './App'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import App from './App.jsx';
 
+const root = createRoot(document.getElementById('root'));
 
-createRoot(document.getElementById('root')).render(
+root.render(
   <StrictMode>
     <App />
-    <App1 />
-  </StrictMode>,
-)
-console.log(App,App1)
+  </StrictMode>
+);
