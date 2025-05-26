@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 
 const App = () => {
   //js logic 
+  const countt = () => setCount (count + 1)
   const [count , setCount ] = useState(0) 
   return (
     <>
 
     <p>Count :{count}</p>
-    <button onClick={()=> setCount (count + 1)}>Count</button>
+    <button onClick={countt}>Count</button>
      
     </>
   )
