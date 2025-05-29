@@ -1,15 +1,16 @@
-import { useState } from "react"
+import { useState } from "react";
 
-const create = (props) => {
-  const users = props.users
-  const setUsers = props.setusers
+const Create = (props) => {
+  const users = props.users;
+  const setUsers = props.setusers;
 
   const [fullName, setFullName] = useState("");
   const [age, setAge] = useState("");
+
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (!fullName || !age) return; // optional: prevent empty inputs
+    if (!fullName || !age) return;
 
     const newUser = { name: fullName, age: parseInt(age) };
     setUsers([...users, newUser]);
@@ -18,9 +19,10 @@ const create = (props) => {
     setFullName("");
     setAge("");
   };
+
   return (
     <div>
-        <h1>Register User</h1>
+      <h1>Register User</h1>
       <form onSubmit={submitHandler}>
         <input
           type="text"
@@ -38,9 +40,8 @@ const create = (props) => {
         <br />
         <button type="submit">Submit</button>
       </form>
-
     </div>
-  )
-}
+  );
+};
 
-export default create
+export default Create;
