@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <Create todos={todos} setTodos={setTodos} />
-      <Read todos={todos} />
+      <Read todos={todos} setTodos={setTodos} />
     </>
   );
 };

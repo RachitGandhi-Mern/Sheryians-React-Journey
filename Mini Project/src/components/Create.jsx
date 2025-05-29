@@ -1,8 +1,6 @@
-
 import { nanoid } from "nanoid";
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 
-// Create Component
 const Create = ({ todos, setTodos }) => {
   const [title, setTitle] = useState("");
   const [isCompleted, setIsCompleted] = useState(false);
@@ -11,24 +9,26 @@ const Create = ({ todos, setTodos }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (title.trim() === "") return;
-    
+
     const newTodo = {
-      id:nanoid(), // Using Date.now() instead of nanoid for simplicity
+      id: nanoid(),
       title,
       isCompleted,
       city,
     };
-    
+
     setTodos([...todos, newTodo]);
+
+    // Reset form
     setTitle("");
     setIsCompleted(false);
     setCity("Jaipur");
   };
 
   return (
-    <Fragment style={{ padding: "20px", fontFamily: "Arial" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial" }}>
       <h1>Create Tasks</h1>
-      <div onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div style={{ marginBottom: "10px" }}>
           <label htmlFor="title">Task Title:</label><br />
           <input
@@ -40,6 +40,7 @@ const Create = ({ todos, setTodos }) => {
             style={{ padding: "5px", width: "200px" }}
           />
         </div>
+
         <div style={{ marginBottom: "10px" }}>
           <label>
             <input
@@ -50,6 +51,7 @@ const Create = ({ todos, setTodos }) => {
             {" "}Completed
           </label>
         </div>
+
         <div style={{ marginBottom: "10px" }}>
           <label htmlFor="city">Select City:</label><br />
           <select
@@ -63,12 +65,25 @@ const Create = ({ todos, setTodos }) => {
             <option value="Kolkata">Kolkata</option>
           </select>
         </div>
-        <button type="button" onClick={handleSubmit} style={{ padding: "8px 16px", backgroundColor: "#007bff", color: "white", border: "none", borderRadius: "4px", cursor: "pointer" }}>
+
+        <button
+          type="submit"
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            cursor: "pointer",
+          }}
+        >
           Add Task
         </button>
-      </div>
+      </form>
+
       <h3 style={{ marginTop: "20px" }}>Selected City: {city}</h3>
-    </Fragment>
+    </div>
   );
 };
+
 export default Create;
