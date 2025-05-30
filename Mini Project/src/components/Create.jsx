@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const Create = ({ todos, setTodos }) => {
   const [title, setTitle] = useState("");
@@ -18,6 +19,8 @@ const Create = ({ todos, setTodos }) => {
     };
 
     setTodos([...todos, newTodo]);
+
+    toast.success("Task added successfully!")
 
     // Reset form
     setTitle("");
